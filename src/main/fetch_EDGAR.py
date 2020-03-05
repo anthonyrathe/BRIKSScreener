@@ -8,7 +8,7 @@ tl = TickerLoader()
 tl.scrapeTickers('sec')
 tickers = tl.getTickers(name='sec',filterTickers=True)
 
-with open('progress','r') as f:
+with open('./progress','r') as f:
 	counts = ast.literal_eval(f.readline())
 	print(counts)
 	count = counts['sec']
