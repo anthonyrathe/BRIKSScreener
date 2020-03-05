@@ -129,11 +129,7 @@ dmypy.json
 .pyre/
 
 # Custom
-/data/cleaned
-/data/raw/fundamentals
-/data/raw/general
-/data/raw/prices
-/data/raw/working_dir
+/data
 Untitled.ipynb
 /credentials
 
