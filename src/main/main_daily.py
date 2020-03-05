@@ -1,5 +1,5 @@
-import os
-os.chdir("/home/anthonyrathe/repos/BRIKSScreener")
+import sys
+sys.path.append("/home/anthonyrathe/repos/BRIKSScreener")
 
 from src.data_processing.RawDataProcessor import RawDataProcessor
 import pandas as pd
