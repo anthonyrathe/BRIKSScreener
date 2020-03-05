@@ -1,3 +1,6 @@
+import os
+os.chdir("/home/anthonyrathe/repos/BRIKSScreener")
+
 from src.data_processing.RawDataProcessor import RawDataProcessor
 import pandas as pd
 

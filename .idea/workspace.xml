@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cbc792d-b3e0-4cf0-b8ba-501a679326ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/main_daily.py" afterPath="$PROJECT_DIR$/src/main/main_daily.py" />
     </list>
     <ignored path="palantirscreener.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.019280206">
-              <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -107,14 +107,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_daily.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_daily.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/main_daily.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#65#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.019280206">
+              <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -167,13 +165,13 @@
         <option value="$PROJECT_DIR$/src/exceptions/NoDataFoundException.py" />
         <option value="$PROJECT_DIR$/src/exceptions/APILimitExceededException.py" />
         <option value="$PROJECT_DIR$/src/main/DataProcessing.py" />
-        <option value="$PROJECT_DIR$/src/main/main_daily.py" />
         <option value="$PROJECT_DIR$/src/data_processing/RawDataProcessor.py" />
         <option value="$PROJECT_DIR$/src/main/EuropeDataScreen.py" />
         <option value="$PROJECT_DIR$/src/main/ExportToSheets.py" />
         <option value="$PROJECT_DIR$/src/data_collecting/YahooFinanceScraper.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/setup.py" />
+        <option value="$PROJECT_DIR$/src/main/main_daily.py" />
       </list>
     </option>
   </component>
@@ -965,16 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/main_daily.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ExportToSheets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1013,8 +1001,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/setup.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/main_daily.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.019280206">
-          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
           <folding />
         </state>
       </provider>
