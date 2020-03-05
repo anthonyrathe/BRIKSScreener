@@ -3,12 +3,13 @@ from src.data_processing.TickerLoader import TickerLoader
 from src.exceptions.APILimitExceededException import APILimitExceededException
 from src.exceptions.NoDataFoundException import NoDataFoundException
 import ast
+from os.path import dirname as dirname
 
 tl = TickerLoader()
 tl.scrapeTickers('sec')
 tickers = tl.getTickers(name='sec',filterTickers=True)
 
-with open('./progress','r') as f:
+with open('{}/progress'.format(dirname(__file__)),'r') as f:
 	counts = ast.literal_eval(f.readline())
 	print(counts)
 	count = counts['sec']
