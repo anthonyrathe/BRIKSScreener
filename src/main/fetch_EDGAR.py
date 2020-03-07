@@ -33,7 +33,7 @@ while True:
 		break
 
 	counts['sec'] = count
-	with open('progress','w+') as f:
+	with open('{}/progress'.format(dirname(__file__)),'w+') as f:
 		f.truncate(0)
 		f.write(str(counts))
 
