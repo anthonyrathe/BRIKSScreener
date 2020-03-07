@@ -37,7 +37,7 @@ while True:
 		f.truncate(0)
 		f.write(str(counts))
 
-	if count == len(tickers):
+	if count == amount:
 		print("We've updated all tickers. Going to sleep now...")
 		break
 

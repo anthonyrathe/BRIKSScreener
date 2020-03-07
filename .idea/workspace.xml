@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5cbc792d-b3e0-4cf0-b8ba-501a679326ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_collecting/SECScraper.py" afterPath="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ExportToSheets.py" afterPath="$PROJECT_DIR$/src/main/ExportToSheets.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/fetch_EDGAR.py" afterPath="$PROJECT_DIR$/src/main/fetch_EDGAR.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/progress" afterPath="$PROJECT_DIR$/src/main/progress" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test.py" afterPath="$PROJECT_DIR$/src/main/test.py" />
     </list>
     <ignored path="palantirscreener.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,16 +30,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-              <folding />
+              <folding>
+                <element signature="e#0#65#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fetch_EDGAR.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fetch_EDGAR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/fetch_EDGAR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18128654">
-              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -83,10 +83,8 @@
         <entry file="file://$PROJECT_DIR$/src/data_processing/RawDataProcessor.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="447" column="64" selection-start-line="447" selection-start-column="64" selection-end-line="447" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/main_daily.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="25" selection-start-line="8" selection-start-column="21" selection-end-line="11" selection-end-column="25" />
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -104,10 +102,22 @@
       <file leaf-file-name="SECScraper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.444445">
+            <state vertical-scroll-proportion="-142.22223">
               <caret line="256" column="1" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="1" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExportToSheets.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/ExportToSheets.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.46783626">
+              <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/data_processing/TickerLoader.py" />
         <option value="$PROJECT_DIR$/src/exceptions/APILimitExceededException.py" />
         <option value="$PROJECT_DIR$/src/data_processing/RawDataProcessor.py" />
-        <option value="$PROJECT_DIR$/src/main/ExportToSheets.py" />
         <option value="$PROJECT_DIR$/src/data_collecting/YahooFinanceScraper.py" />
         <option value="$PROJECT_DIR$/src/main/setup.py" />
         <option value="$PROJECT_DIR$/src/main/main_daily.py" />
@@ -165,9 +174,10 @@
         <option value="$PROJECT_DIR$/src/data_collecting/SECScraperV2.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/test.py" />
-        <option value="$PROJECT_DIR$/src/main/fetch_EDGAR.py" />
         <option value="$PROJECT_DIR$/src/main/progress" />
         <option value="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
+        <option value="$PROJECT_DIR$/src/main/fetch_EDGAR.py" />
+        <option value="$PROJECT_DIR$/src/main/ExportToSheets.py" />
       </list>
     </option>
   </component>
@@ -371,7 +381,7 @@
       <recent name="$PROJECT_DIR$/src/data_processing" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.fetch_EDGAR">
+  <component name="RunManager" selected="Python.ExportToSheets">
     <configuration default="false" name="ExportToSheets" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -588,11 +598,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.fetch_EDGAR" />
-        <item index="1" class="java.lang.String" itemvalue="Python.SECScraper" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.DataProcessing" />
-        <item index="4" class="java.lang.String" itemvalue="Python.ExportToSheets" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ExportToSheets" />
+        <item index="1" class="java.lang.String" itemvalue="Python.fetch_EDGAR" />
+        <item index="2" class="java.lang.String" itemvalue="Python.SECScraper" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.DataProcessing" />
       </list>
     </recent_temporary>
   </component>
@@ -908,16 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ExportToSheets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data_collecting/YahooFinanceScraper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -956,14 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3027523">
           <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/DataProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1010,14 +1002,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/main_daily.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="25" selection-start-line="8" selection-start-column="21" selection-end-line="11" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/progress">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1026,19 +1010,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_processing/RawDataProcessor.py">
+    <entry file="file://$PROJECT_DIR$/src/main/main_daily.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="447" column="64" selection-start-line="447" selection-start-column="64" selection-end-line="447" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.444445">
+        <state vertical-scroll-proportion="-142.22223">
           <caret line="256" column="1" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="1" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -1046,12 +1028,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/DataProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/fetch_EDGAR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18128654">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_processing/RawDataProcessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ExportToSheets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46783626">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -4,21 +4,22 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from gspread_dataframe import set_with_dataframe
 import datetime
+from os.path import dirname as dirname
 
-files = os.listdir("../../data/cleaned/snapshot/")
+files = os.listdir("{}/data/cleaned/snapshot/".format(dirname(dirname(dirname(__file__)))))
 europe_file = sorted([file for file in files if "europe" in file])[-1]
 sec_file = sorted([file for file in files if "sec" in file])[-1]
 
 # Load most recent EUROPE & SEC data
-europe_data = pd.read_csv("../../data/cleaned/snapshot/{}".format(europe_file),index_col=0)
-sec_data = pd.read_csv("../../data/cleaned/snapshot/{}".format(sec_file),index_col=0)
+europe_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),europe_file),index_col=0)
+sec_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),sec_file),index_col=0)
 
 # Connect to Google Sheets
 scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
 
 credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    "../../credentials/sheets_oauth.json", scope)
+    "{}/credentials/sheets_oauth.json".format(dirname(dirname(dirname(__file__)))), scope)
 gc = gspread.authorize(credentials)
 
 # Upload raw dataframes to spreadsheet
