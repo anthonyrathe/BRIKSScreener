@@ -36,3 +36,9 @@ while True:
 	with open('progress','w+') as f:
 		f.truncate(0)
 		f.write(str(counts))
+
+	if count == len(tickers):
+		print("We've updated all tickers. Going to sleep now...")
+		break
+
+
