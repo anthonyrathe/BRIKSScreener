@@ -17,7 +17,7 @@ def generateScreen(exchange):
 	result = pd.DataFrame(columns=fields)
 	length = len(tickers)
 	count = 0
-	for ticker in tickers[:10]:
+	for ticker in tickers:
 		count += 1
 		print("{} -- {}%".format(ticker, count/length*100))
 		scraper = YahooFinanceScraper(ticker)
