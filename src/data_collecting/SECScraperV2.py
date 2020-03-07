@@ -6,6 +6,7 @@ from src.exceptions.NoDataFoundException import NoDataFoundException
 from src.exceptions.APILimitExceededException import APILimitExceededException
 from SECEdgar.filings.base import Filing
 from SECEdgar.filings.filing_types import FilingType
+from json.decoder import JSONDecodeError
 from src.helper.xml_to_dict import XmlDictConfig
 from xml.etree import cElementTree as ElementTree
 
@@ -32,7 +33,10 @@ class SECScraperV2:
 			response = requests.get("http://datafied.api.edgar-online.com/v2/corefinancials/qtr?primarysymbols="+parameters['primarysymbols']
 									+ "&fiscalperiod=" + str(parameters['fiscalperiod']) + "&appkey=" + str(parameters['appkey']))
 
-			return json.loads(response.content.decode())
+			try:
+				return json.loads(response.content.decode())
+			except JSONDecodeError:
+				raise NoDataFoundException("No data in JSON format found...")
 
 		# Fetches the core financial data of a company during and between specified quarters.
 		# Preferably pick an even amount of quarters, since an even amount of results will always be provided

@@ -27,8 +27,8 @@ while True:
 		reader.loadRaw(update=['fundamentals','general'],forceRefetch=True)
 
 
-	except NoDataFoundException:
-		print("No data")
+	except NoDataFoundException as e:
+		print("No data: {}".format(e.message))
 	except APILimitExceededException:
 		break
 

@@ -30,9 +30,10 @@ class SECScraper:
 									+ "&fiscalperiod=" + str(parameters['fiscalperiod']) + "&appkey=" + str(parameters['appkey']))
 
 			try:
-				return json.loads(response.content.decode())
+				r = json.loads(response.content.decode())
+				return r
 			except JSONDecodeError:
-				raise NoDataFoundException()
+				raise NoDataFoundException("No data in JSON format found... We found this: \n{}".format(response.content.decode()))
 
 
 		# Fetches the core financial data of a company during and between specified quarters.
@@ -69,10 +70,29 @@ class SECScraper:
 							return data
 			return data
 
-		# Fetches all core finanical data of a company from the first quarter of 2000 until the last of the current year (if
+		def get_core_financials_v2(symbol, start_year, start_quarter, end_year, end_quarter):
+			# SEC API has been updated and now returns all of the history in one request
+			new_data = get_core_financials_8qtrs(symbol,end_year,end_quarter)
+			data = []
+			if "Message" in new_data.keys():
+				if "rate limit" in new_data['Message']:
+					raise APILimitExceededException
+				elif "Result set is empty due to an entitlement." in new_data['Message']:
+					raise NoDataFoundException
+				elif "Parameter 'primarysymbols' has invalid value. Only a comma can be used to separate tickers. For dual class stocks, only a period or apostrophe are recognized characters." in new_data['Message']:
+					raise NoDataFoundException
+				else:
+					raise Exception(new_data['Message'])
+			else:
+				for i in range(len(new_data['result']['rows'])):
+					data.append(new_data['result']['rows'][i]['values'])
+			return data
+
+		# Fetches all core financial data of a company from the first quarter of 2000 until the last of the current year (if
 		# available)
 		def get_all_core_financials(symbol):
-			return get_core_financials(symbol, 2000, 1, datetime.datetime.now().year+5, 4)
+			# return get_core_financials(symbol, 2000, 1, datetime.datetime.now().year+5, 4)
+			return get_core_financials_v2(symbol, 2000, 1, datetime.datetime.now().year+5, 4)
 
 		unformatted = get_all_core_financials(self.ticker)
 		result = pd.DataFrame()
@@ -106,3 +126,5 @@ class SECScraper:
 # 	that preliminary numbers will not differ significantly from extrapolation of previous numbers.
 #		UPDATE: when using the latest year data as test set (this is probably the best appx. of reality), we obtained
 #			even better results
+
+
