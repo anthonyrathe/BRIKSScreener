@@ -1,4 +1,4 @@
-import datetime, json, os
+import datetime, json, os, time
 import requests
 import pandas as pd
 from os.path import dirname as dirname
@@ -26,14 +26,18 @@ class SECScraper:
 			parameters = {"primarysymbols": str(symbol), "fiscalperiod": "1980q1~"+str(end_year)+"q"+str(end_quarter), "appkey": str(appkey)}
 
 			# Make a get request with the parameters.
-			response = requests.get("http://datafied.api.edgar-online.com/v2/corefinancials/qtr?primarysymbols="+parameters['primarysymbols']
+			response = requests.get("http://datafied.api.edgar-online.com/v2/corefinancials/qtrJSON?primarysymbols="+parameters['primarysymbols']
 									+ "&fiscalperiod=" + str(parameters['fiscalperiod']) + "&appkey=" + str(parameters['appkey']))
 
-			try:
-				r = json.loads(response.content.decode())
-				return r
-			except JSONDecodeError:
-				raise NoDataFoundException("No data in JSON format found... We found this: \n{}".format(response.content.decode()))
+			tries = 1
+			while True:
+				try:
+					r = json.loads(response.content.decode())
+					return r
+				except JSONDecodeError:
+					if tries > 10: raise NoDataFoundException("No data in JSON format found... We found this: \n{}".format(response.content.decode()))
+					tries += 1
+					time.sleep(0.500)
 
 
 		# Fetches the core financial data of a company during and between specified quarters.
