@@ -4,13 +4,6 @@
     <list default="true" id="5cbc792d-b3e0-4cf0-b8ba-501a679326ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/raw/tickers/nasdaq.txt" afterPath="$PROJECT_DIR$/data/raw/tickers/nasdaq.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/raw/tickers/other_sec.txt" afterPath="$PROJECT_DIR$/data/raw/tickers/other_sec.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_collecting/SECScraper.py" afterPath="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_collecting/SECScraperV2.py" afterPath="$PROJECT_DIR$/src/data_collecting/SECScraperV2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/exceptions/NoDataFoundException.py" afterPath="$PROJECT_DIR$/src/exceptions/NoDataFoundException.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/fetch_EDGAR.py" afterPath="$PROJECT_DIR$/src/main/fetch_EDGAR.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/progress" afterPath="$PROJECT_DIR$/src/main/progress" />
     </list>
     <ignored path="palantirscreener.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="134" column="18" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.72477067">
+              <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -88,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SECScraper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SECScraper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3764479">
+            <state vertical-scroll-proportion="-7.2222223">
               <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -149,12 +142,12 @@
         <option value="$PROJECT_DIR$/src/main/main_daily.py" />
         <option value="$PROJECT_DIR$/src/main/DataProcessing.py" />
         <option value="$PROJECT_DIR$/src/main/EuropeDataScreen.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/fetch_EDGAR.py" />
         <option value="$PROJECT_DIR$/src/exceptions/NoDataFoundException.py" />
         <option value="$PROJECT_DIR$/src/data_collecting/SECScraperV2.py" />
         <option value="$PROJECT_DIR$/src/main/progress" />
         <option value="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -290,28 +283,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="raw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="palantirscreener" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BRIKSScreener" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fundamentals" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1010,14 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="18" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/exceptions/NoDataFoundException.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1065,11 +1028,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3764479">
+        <state vertical-scroll-proportion="-7.2222223">
           <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72477067">
+          <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
