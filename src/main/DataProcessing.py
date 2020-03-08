@@ -17,7 +17,7 @@ amount = len(tickers)
 
 snapshot = pd.DataFrame()
 
-for ticker in tickers[:5]:
+for ticker in tickers:
 	try:
 		count += 1
 		print("{}: {}%".format(ticker,count/amount*100))
