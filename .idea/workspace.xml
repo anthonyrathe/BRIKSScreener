@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cbc792d-b3e0-4cf0-b8ba-501a679326ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/main_weekly.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/raw/tickers/lse.csv" afterPath="$PROJECT_DIR$/data/raw/tickers/lse.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_processing/TickerLoader.py" afterPath="$PROJECT_DIR$/src/data_processing/TickerLoader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/OverviewGeneration.py" afterPath="$PROJECT_DIR$/src/main/OverviewGeneration.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ExportToDrive.py" afterPath="$PROJECT_DIR$/src/main/ExportToDrive.py" />
     </list>
     <ignored path="palantirscreener.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,6 +46,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ExportToDrive.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/ExportToDrive.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47368422">
+              <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OverviewGenerator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/overview_generation/OverviewGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -70,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_weekly.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main_weekly.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/main_weekly.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0877193">
-              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -97,28 +107,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExportToDrive.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/ExportToDrive.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="133" column="6" selection-start-line="133" selection-start-column="6" selection-end-line="133" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -177,13 +165,13 @@
         <option value="$PROJECT_DIR$/src/overview_generation/test.py" />
         <option value="$PROJECT_DIR$/credentials/settings.yaml" />
         <option value="$PROJECT_DIR$/src/main/test.py" />
-        <option value="$PROJECT_DIR$/src/main/ExportToDrive.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/progress" />
         <option value="$PROJECT_DIR$/src/overview_generation/OverviewGenerator.py" />
         <option value="$PROJECT_DIR$/src/data_processing/TickerLoader.py" />
         <option value="$PROJECT_DIR$/src/main/OverviewGeneration.py" />
         <option value="$PROJECT_DIR$/src/main/main_weekly.py" />
+        <option value="$PROJECT_DIR$/src/main/ExportToDrive.py" />
       </list>
     </option>
   </component>
@@ -1032,30 +1020,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/credentials/settings.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09259259">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ExportToSheets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18128654">
           <caret line="21" column="90" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="90" />
           <folding>
             <element signature="e#0#19#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ExportToDrive.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1076,16 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/overview_generation/OverviewGenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/fetch_EDGAR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1093,22 +1053,6 @@
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/raw/tickers/lse.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_processing/TickerLoader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="42" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,11 +1082,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/raw/tickers/lse.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_processing/TickerLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="42" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credentials/settings.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09259259">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/main_weekly.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0877193">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="57" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/overview_generation/OverviewGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ExportToDrive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47368422">
+          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,4 +1,6 @@
 from __future__ import (unicode_literals, absolute_import, print_function,division)
+import sys
+sys.path.append("/home/anthonyrathe/repos/BRIKSScreener")
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 from os.path import dirname as dirname
