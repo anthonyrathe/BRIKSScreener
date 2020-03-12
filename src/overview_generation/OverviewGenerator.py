@@ -60,7 +60,7 @@ class OverviewGenerator:
 
 		for r in range(len(table_contents)):
 			for i in range(len(table_contents[r])):
-				slide.shapes[7].table.cell(r,1+i).text = table_contents[r][i]
+				slide.shapes[7].table.cell(r,1+i).text = str(table_contents[r][i])
 				for paragraph in slide.shapes[7].table.cell(r,1+i).text_frame.paragraphs:
 					paragraph.alignment = PP_ALIGN.CENTER
 					for run in paragraph.runs:
