@@ -68,7 +68,8 @@ class TickerLoader:
 
 	def scrapeTickers(self,name):
 		if name == 'lse':
-			url = "https://www.londonstockexchange.com/exchange/prices-and-markets/international-markets/markets/securities/XLON.html?&page={}"
+			#url = "https://www.londonstockexchange.com/exchange/prices-and-markets/international-markets/markets/securities/XLON.html?&page={}"
+			url = "https://www.londonstockexchange.com/exchange/prices-and-markets/stocks/prices-search/stock-prices-search.html?&page={}"
 			response = requests.get(url.format(1)).text
 			pageCountTag = '<p class="floatsx">&nbsp;Page 1 of '
 			pageCountEndTag = '</p>'
@@ -84,8 +85,10 @@ class TickerLoader:
 				table = str(soup.find_all('table')[0])
 				table = pd.read_html(table)[0]
 				result = pd.concat((result,table),axis=0)
+				if list(result.Code)[-1][0] == '0': break
 
-			result['Symbol'] = result.Symbol.apply(lambda ticker: ticker[:-1])
+			#result['Symbol'] = result.Code.apply(lambda ticker: ticker[:-1])
+			result['Symbol'] = result.Code
 			result.to_csv(self.path_lse,index=False)
 
 		elif name == 'sec':
