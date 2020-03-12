@@ -25,7 +25,7 @@ class DataReader:
 		self.balanceSheetFields = ['amended','audited','cashandcashequivalents','cashcashequivalentsandshortterminvestments','cashfromfinancingactivities','cashfrominvestingactivities','cashfromoperatingactivities','cik','commonstock','companyname','crosscalculated','currencycode','dcn','entityid','fiscalquarter','fiscalyear','formtype','inventoriesnet','marketoperator','markettier','original','otherassets','othercurrentassets','othercurrentliabilities','otherliabilities','periodenddate','periodlength','periodlengthcode','preliminary','primaryexchange','primarysymbol','propertyplantequipmentnet','receiveddate','restated','siccode','sicdescription','taxonomyid','totaladjustments','totalassets','totalcurrentassets','totalcurrentliabilities','totalliabilities','totallongtermdebt','totalreceivablesnet','totalshorttermdebt','totalstockholdersequity','usdconversionrate','goodwill','intangibleassets']
 
 
-	def loadRaw(self,update=[],forceRefetch=False):
+	def loadRaw(self,update=[],forceRefetch=False,ignore=[]):
 		"""
 		Load fundamentals and prices
 		:return:
@@ -38,12 +38,14 @@ class DataReader:
 			scraper = SECScraper(self.ticker)
 			scraper.storeAllQuarterFilings()
 
-		self.fundamentals = pd.read_csv(path,index_col='receiveddate', parse_dates=True).sort_values(by='receiveddate')
-
-		# Add empty columns for all fields of which no data exists
-		for field in self.balanceSheetFields+self.incomeStatementFields:
-			if field not in self.fundamentals.columns:
-				self.fundamentals[field] = np.nan
+		try:
+			self.fundamentals = pd.read_csv(path,index_col='receiveddate', parse_dates=True).sort_values(by='receiveddate')
+			# Add empty columns for all fields of which no data exists
+			for field in self.balanceSheetFields+self.incomeStatementFields:
+				if field not in self.fundamentals.columns and field != 'receiveddate':
+					self.fundamentals[field] = np.nan
+		except FileNotFoundError:
+			if 'fundamentals' not in ignore: raise NoDataFoundException("No fundamental data found on EDGAR")
 
 		# Load raw prices & shares outstanding
 		pricePath = os.path.relpath("{}/data/raw/prices/{}.csv".format(dirname(dirname(dirname(__file__))),self.ticker))
@@ -58,16 +60,21 @@ class DataReader:
 		try:
 			self.prices = pd.read_csv(pricePath,index_col=0, parse_dates=True).sort_values(by='Date')
 		except KeyError:
-			raise NoDataFoundException("No price data found on Yahoo Finance")
+			if 'prices' not in ignore: raise NoDataFoundException("No price data found on Yahoo Finance")
+		except FileNotFoundError:
+			if 'prices' not in ignore: raise NoDataFoundException("No price data found on Yahoo Finance")
 
-		with open(generalPath, 'r') as file:
-			self.general = ast.literal_eval(file.readline())
-			try:
-				self.sharesOutstanding = self.general['quoteSummary']['result'][0]['defaultKeyStatistics']['sharesOutstanding']['raw']
-			except KeyError:
-				raise NoDataFoundException("No shares outstanding data found on Yahoo Finance...")
-			except TypeError:
-				raise NoDataFoundException("No data found on Yahoo Finance...")
+		try:
+			with open(generalPath, 'r') as file:
+				self.general = ast.literal_eval(file.readline())
+				try:
+					self.sharesOutstanding = self.general['quoteSummary']['result'][0]['defaultKeyStatistics']['sharesOutstanding']['raw']
+				except KeyError:
+					raise NoDataFoundException("No shares outstanding data found on Yahoo Finance...")
+				except TypeError:
+					raise NoDataFoundException("No data found on Yahoo Finance...")
+		except FileNotFoundError:
+			if 'general' not in ignore: raise NoDataFoundException("No general data found on Yahoo Finance")
 
 	def getFundamentals(self):
 		if self.fundamentals is None:
@@ -206,8 +213,143 @@ class DataReader:
 		processor = RawDataProcessor(self, update=update)
 		return processor.generateSnapshot(**params)
 
+	def getOverview(self,update=[]):
+		# Load all available data
+		self.loadRaw(update=update,forceRefetch=False,ignore=['fundamentals',])
+
+		max_years = 5
+		min_years = 1
+
+		# Load most recent EUROPE & SEC data
+		files = os.listdir("{}/data/cleaned/snapshot/".format(dirname(dirname(dirname(__file__)))))
+		europe_file = sorted([file for file in files if "europe" in file])[-1]
+		sec_file = sorted([file for file in files if "sec" in file])[-1]
+		europe_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),europe_file),index_col=1)
+		sec_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),sec_file),index_col=0)
+
+		result = {}
+
+		# Select general data
+		result['name'] = self.general['quoteSummary']['result'][0]['quoteType']['longName']
+		result['ticker'] = self.ticker
+		result['summary'] = self.general['quoteSummary']['result'][0]['assetProfile']['longBusinessSummary']
+
+		# Select multiples and performance data
+		if self.fundamentals is None:
+			# Fundamental data comes from Yahoo Finance
+			result['currencies'] = {'exchange':europe_data['currencycode_exchange'].loc[self.ticker],'filings':europe_data['currencycode_earnings'].loc[self.ticker]}
+
+			# Select multiples and metrics data
+			result['multiples'] = {}
+			result['industry'] = europe_data['industry'].loc[self.ticker]
+			europe_data['ROE'] = europe_data['netIncome']/europe_data['totalStockholderEquity']
+			europe_data['P/B'] = europe_data['market_cap']/europe_data['conversion_rate_earnings_to_exchange']/europe_data['totalStockholderEquity']
+			fields = ['EV/EBITDA','P/E','P/B','ROE','Current Ratio','Div. Yld.','market_cap']
+			peer_data = europe_data[europe_data.industry == result['industry']][fields]
+			for field in fields:
+				result['multiples'][field] = {'company':europe_data[field].loc[self.ticker], 'peers':peer_data[field].median()}
+			result['multiples']['current_ratio'] = result['multiples'].pop('Current Ratio')
+			result['multiples']['dividend_yield'] = result['multiples'].pop('Div. Yld.')
+
+			# Select performance data
+			fundamentals = self.general['quoteSummary']['result'][0]['incomeStatementHistory']['incomeStatementHistory']
+			other_fundamentals = self.general['quoteSummary']['result'][0]['cashflowStatementHistory']['cashflowStatements']
+			if len(fundamentals) < min_years: raise NoDataFoundException("We couldn't find enough historical fundamental data")
+			years = min(max_years,len(fundamentals),len(other_fundamentals))
+
+			def safe_get(report,field):
+				if 'raw' in report[field].keys():
+					return report[field]['raw']
+				else:
+					return 0
+
+			performance = {'labels':[str(datetime.datetime.fromtimestamp(report['endDate']['raw']).year) for report in fundamentals[:years]]}
+			performance['totalrevenue'] = [safe_get(report,'totalRevenue') for report in fundamentals[:years]]
+			performance['EBITDA'] = [safe_get(fundamentals[i],'ebit')+safe_get(other_fundamentals[i],'depreciation') for i in range(years)]
+			performance['netincome'] = [safe_get(report,'netIncome') for report in fundamentals[:years]]
+
+			performance = pd.DataFrame(performance)
+
+			result['performance'] = performance
+		else:
+			# Fundamental data comes from EDGAR
+			result['currencies'] = {'exchange':'USD','filings':sec_data['currencycode'].loc[self.ticker]}
+			fundamentals = self.fundamentals
+
+			# Select multiples and metrics data
+			result['multiples'] = {}
+			result['industry'] = sec_data['sicdescription'].loc[self.ticker]
+			sec_data['ROE'] = sec_data['netincome']/sec_data['totalstockholdersequity']
+			sec_data['current_ratio'] = sec_data['totalcurrentassets']/sec_data['totalcurrentliabilities']
+			sec_data['dividend_yield'] = -sec_data['dividendspaid']/sec_data['market_cap']
+			fields = ['EV/EBITDA','P/E','P/B','ROE','current_ratio','dividend_yield','market_cap']
+			peer_data = sec_data[sec_data.sicdescription == result['industry']][fields]
+			for field in fields:
+				result['multiples'][field] = {'company':sec_data[field].loc[self.ticker], 'peers':peer_data[field].median()}
+
+			# Select performance data
+			fundamentals['EBITDA'] = fundamentals['ebit']+fundamentals['cfdepreciationamortization']
+			fields = ['totalrevenue','EBITDA','netincome']
+
+
+			def select_4qs(df,year,quarter):
+				pairs = []
+				while len(pairs)<4:
+					pairs.append((year,quarter))
+					if quarter == 1:
+						year -= 1
+						quarter = 4
+					else:
+						quarter -= 1
+
+				result = df[((df.fiscalyear==pairs[0][0]) & (df.fiscalquarter==pairs[0][1]))|
+						  ((df.fiscalyear==pairs[1][0]) & (df.fiscalquarter==pairs[1][1]))|
+						  ((df.fiscalyear==pairs[2][0]) & (df.fiscalquarter==pairs[2][1]))|
+						  ((df.fiscalyear==pairs[3][0]) & (df.fiscalquarter==pairs[3][1]))]
+				if len(result.index) < 4: raise NoDataFoundException("We couldn't find 4 consecutive quarter releases...")
+				return result
+
+			fundamentals = fundamentals.sort_values(by=['fiscalyear','fiscalquarter'],ascending=False)
+			current_year = fundamentals.iloc[0]['fiscalyear']
+			current_quarter = fundamentals.iloc[0]['fiscalquarter']
+			pairs = [(current_year,current_quarter),]+[(current_year-i,4) for i in range(1,max_years)]
+			fundamentals_by_year = []
+			for pair in pairs:
+				try:
+					fundamentals_by_year.append(select_4qs(fundamentals,pair[0],pair[1]))
+				except NoDataFoundException:
+					if len(fundamentals_by_year) < min_years:
+						raise NoDataFoundException("We couldn't find enough historical fundamental data...")
+					else:
+						break
+			pairs = pairs[:len(fundamentals_by_year)]
+
+
+
+			this_year_fundamentals = fundamentals_by_year[0]
+			ttm = len(this_year_fundamentals[this_year_fundamentals.fiscalyear==current_year].index) < 4
+			if ttm:
+				ttm_string = " TTM"
+			else:
+				ttm_string = ""
+
+			performance = {'labels':["{}{}".format(int(pairs[0][0]),ttm_string),]+[str(int(pair[0])) for pair in pairs[1:]]}
+			for field in fields:
+				performance[field] = [df[field].sum() for df in fundamentals_by_year]
+			performance = pd.DataFrame(performance)
+
+			result['performance'] = performance
+
+		# Select price data
+		result['prices'] = self.prices[self.prices.index>=(self.prices.index.max()-datetime.timedelta(365*5))]['adj_close']
+
+		return result
+
+
+
 
 # Trigger data updates with the words:
 #	- fundamentals
 #	- prices
 #	- cleaned
+
