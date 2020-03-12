@@ -131,6 +131,7 @@ dmypy.json
 # Custom
 /data
 data/
+/data/
 Untitled.ipynb
 /credentials
 /src/main/progress

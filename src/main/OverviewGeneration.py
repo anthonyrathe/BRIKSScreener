@@ -15,7 +15,6 @@ def generate_overviews(exchange):
 	else:
 		tickers = tl.getTickers(exchange,filterTickers=False,exchangeSuffix=True)
 
-	tickers = tickers
 	generator = OverviewGenerator()
 	start = tickers[0]
 	for i in range(len(tickers)):
