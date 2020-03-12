@@ -1,10 +1,10 @@
+import sys
+sys.path.append("/home/anthonyrathe/repos/BRIKSScreener")
 from src.overview_generation.OverviewGenerator import OverviewGenerator
 from src.data_processing.TickerLoader import TickerLoader
 from src.exceptions.NoDataFoundException import NoDataFoundException
 import os
 from os.path import dirname as dirname
-import sys
-sys.path.append("/home/anthonyrathe/repos/BRIKSScreener")
 
 tl = TickerLoader()
 exchanges = ['sec','frankfurt','euronext','lse']
