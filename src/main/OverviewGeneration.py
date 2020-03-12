@@ -9,12 +9,20 @@ from os.path import dirname as dirname
 tl = TickerLoader()
 exchanges = ['sec','frankfurt','euronext','lse']
 
+def strip_exchange_code(str):
+	i = str.find('.')
+	if i > -1:
+		return str[:i]
+	else:
+		return str
+
 def generate_overviews(exchange):
 	if exchange == 'sec':
 		tickers = tl.getTickers(name='sec',filterTickers=True)
 	else:
 		tickers = tl.getTickers(exchange,filterTickers=False,exchangeSuffix=True)
 
+	tickers = sorted(tickers)
 	generator = OverviewGenerator()
 	start = tickers[0]
 	for i in range(len(tickers)):
@@ -22,7 +30,7 @@ def generate_overviews(exchange):
 		print("{}: {} - {}%".format(exchange,ticker,round(i/len(tickers)*100,2)),end=" ")
 		try:
 			if not generator.generateOverview(ticker,update=[]):
-				generator.save("{}_{}-{}".format(exchange,start.replace('.','_'),ticker.replace('.','_')))
+				generator.save("{}_{}-{}".format(exchange,strip_exchange_code(start),strip_exchange_code(ticker)))
 				generator = OverviewGenerator()
 				if i < len(tickers) - 1:
 					start = tickers[i+1]
@@ -36,7 +44,7 @@ def generate_overviews(exchange):
 			print("")
 			continue
 
-	generator.save("{}_{}-{}".format(exchange,start.replace('.','_'),tickers[-1].replace('.','_')))
+	generator.save("{}_{}-{}".format(exchange,strip_exchange_code(start),strip_exchange_code(tickers[-1])))
 
 base_path = "{}/data/cleaned/overview_ppt/".format(dirname(dirname(dirname(__file__))))
 files = os.listdir(os.path.relpath(base_path))
@@ -46,6 +54,5 @@ for file in files:
 for exchange in exchanges:
 	generate_overviews(exchange)
 
-# Upload to Google Drive
-import src.main.ExportToDrive
+
 
