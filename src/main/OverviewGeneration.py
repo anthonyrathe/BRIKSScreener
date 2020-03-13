@@ -51,7 +51,7 @@ files = os.listdir(os.path.relpath(base_path))
 for file in files:
 	os.remove("{}/{}".format(base_path,file))
 
-for exchange in exchanges[1:]:
+for exchange in exchanges:
 	generate_overviews(exchange)
 
 
