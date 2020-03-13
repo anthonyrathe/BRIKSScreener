@@ -257,8 +257,8 @@ class SECScraper:
 #		UPDATE: when using the latest year data as test set (this is probably the best appx. of reality), we obtained
 #			even better results
 
-scraper = SECScraper('BIOL')
-scraper.storeAllQuarterFilings()
+#scraper = SECScraper('BIOL')
+#scraper.storeAllQuarterFilings()
 
 
 
