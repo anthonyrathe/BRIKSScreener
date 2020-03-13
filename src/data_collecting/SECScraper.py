@@ -210,8 +210,12 @@ class SECScraper:
 				else:
 					raise Exception(new_data['Message'])
 			else:
-				for i in range(len(new_data['result']['rows'])):
-					data.append(new_data['result']['rows'][i]['values'])
+				try:
+					for i in range(len(new_data['result']['rows'])):
+						data.append(new_data['result']['rows'][i]['values'])
+				except Exception as e:
+					print("Special exception {}".format(e.with_traceback()))
+					raise NoDataFoundException(e)
 			return data
 
 		# Fetches all core financial data of a company from the first quarter of 2000 until the last of the current year (if
@@ -253,8 +257,8 @@ class SECScraper:
 #		UPDATE: when using the latest year data as test set (this is probably the best appx. of reality), we obtained
 #			even better results
 
-#scraper = SECScraper('AAXJ')
-#scraper.storeAllQuarterFilings()
+scraper = SECScraper('BIOL')
+scraper.storeAllQuarterFilings()
 
 
 

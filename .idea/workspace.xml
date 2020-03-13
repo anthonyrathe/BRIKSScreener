@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cbc792d-b3e0-4cf0-b8ba-501a679326ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/OverviewGeneration.py" afterPath="$PROJECT_DIR$/src/main/OverviewGeneration.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_collecting/SECScraper.py" afterPath="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
     </list>
     <ignored path="palantirscreener.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,18 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fetch_EDGAR.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/fetch_EDGAR.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="68" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TickerLoader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data_processing/TickerLoader.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,14 +43,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExportToDrive.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExportToDrive.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ExportToDrive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21052632">
+            <state vertical-scroll-proportion="0.0">
               <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
               <folding>
                 <element signature="e#0#83#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SECScraper.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.61988306">
+              <caret line="217" column="37" selection-start-line="217" selection-start-column="37" selection-end-line="217" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,7 +161,6 @@
         <option value="$PROJECT_DIR$/src/main/setup.py" />
         <option value="$PROJECT_DIR$/src/exceptions/NoDataFoundException.py" />
         <option value="$PROJECT_DIR$/src/data_collecting/SECScraperV2.py" />
-        <option value="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
         <option value="$PROJECT_DIR$/src/main/ExportToSheets.py" />
         <option value="$PROJECT_DIR$/src/main/fetch_EDGAR.py" />
         <option value="$PROJECT_DIR$/src/main/DataProcessing.py" />
@@ -181,6 +178,7 @@
         <option value="$PROJECT_DIR$/src/main/EuropeDataScreen.py" />
         <option value="$PROJECT_DIR$/src/main/main_daily.py" />
         <option value="$PROJECT_DIR$/src/main/OverviewGeneration.py" />
+        <option value="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
       </list>
     </option>
   </component>
@@ -420,24 +418,7 @@
       <recent name="$PROJECT_DIR$/src/data_processing" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.OverviewGeneration">
-    <configuration default="false" name="OverviewGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/overview_generation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="palantirscreener" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/overview_generation/OverviewGenerator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.SECScraper">
     <configuration default="false" name="main_daily" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -502,6 +483,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="palantirscreener" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SECScraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/data_collecting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="palantirscreener" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -629,19 +627,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.OverviewGenerator" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main_daily" />
-      <item index="2" class="java.lang.String" itemvalue="Python.OverviewGeneration" />
-      <item index="3" class="java.lang.String" itemvalue="Python.ExportToDrive" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Python.main_daily" />
+      <item index="1" class="java.lang.String" itemvalue="Python.OverviewGeneration" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ExportToDrive" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.SECScraper" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.OverviewGeneration" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ExportToDrive" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.main_daily" />
-        <item index="4" class="java.lang.String" itemvalue="Python.OverviewGenerator" />
+        <item index="0" class="java.lang.String" itemvalue="Python.SECScraper" />
+        <item index="1" class="java.lang.String" itemvalue="Python.OverviewGeneration" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ExportToDrive" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.main_daily" />
       </list>
     </recent_temporary>
   </component>
@@ -667,7 +665,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32711443" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32711443" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -905,16 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.9012346">
-          <caret line="256" column="1" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data_processing/RawDataProcessor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1121,11 +1109,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ExportToDrive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21052632">
+        <state vertical-scroll-proportion="0.0">
           <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
           <folding>
             <element signature="e#0#83#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61988306">
+          <caret line="217" column="37" selection-start-line="217" selection-start-column="37" selection-end-line="217" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
