@@ -16,6 +16,7 @@ class DataReader:
 		self.fundamentals = None
 		self.prices = None
 		self.sharesOutstanding = None
+		self.marketCap = None
 		self.general = None
 		self.cleaned = None
 
@@ -69,6 +70,7 @@ class DataReader:
 				self.general = ast.literal_eval(file.readline())
 				try:
 					self.sharesOutstanding = self.general['quoteSummary']['result'][0]['defaultKeyStatistics']['sharesOutstanding']['raw']
+					self.marketCap = self.general['quoteSummary']['result'][0]['summaryDetail']['marketCap']['raw']
 				except KeyError:
 					raise NoDataFoundException("No shares outstanding data found on Yahoo Finance...")
 				except TypeError:
@@ -90,6 +92,11 @@ class DataReader:
 		if self.sharesOutstanding is None:
 			raise Exception("Shares outstanding weren't loaded...")
 		return self.sharesOutstanding
+
+	def getMarketCap(self):
+		if self.marketCap is None:
+			raise Exception("Market Cap wasn't loaded...")
+		return self.marketCap
 
 	def getGeneral(self):
 		if self.general is None:

@@ -314,6 +314,7 @@ class YahooFinanceScraper:
 				shares_outstanding = self.general['quoteSummary']['result'][0]['defaultKeyStatistics']['sharesOutstanding']['raw']
 				current_price = self.general['quoteSummary']['result'][0]['financialData']['currentPrice']['raw']
 				new['market_cap'] = shares_outstanding*current_price
+				#new['market_cap'] = self.general['quoteSummary']['result'][0]['summaryDetail']['marketCap']['raw']
 				result = pd.concat((result,new),axis=1)
 
 			result = result.loc[:, ~result.columns.duplicated()]
@@ -346,3 +347,7 @@ class YahooFinanceScraper:
 			return result
 		except Exception:
 			return None
+
+#scraper = YahooFinanceScraper('AC')
+#print(scraper.getSnapshot())
+

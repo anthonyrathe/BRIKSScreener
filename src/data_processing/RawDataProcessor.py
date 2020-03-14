@@ -440,6 +440,7 @@ class RawDataProcessor:
 
 
 		processedData['market_cap'] = processedData['adj_close']*self.reader.getSharesOutstanding()
+		#processedData['market_cap'] = self.reader.getMarketCap()
 		processedData['EBITDA'] = processedData['ebit']+processedData['cfdepreciationamortization']
 
 		processedData['EV/EBITDA'] = (processedData['market_cap']/processedData['usdconversionrate']+processedData['totalliabilities']-processedData['cashandcashequivalents'])/processedData['EBITDA']
