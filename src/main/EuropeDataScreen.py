@@ -22,6 +22,7 @@ def generateScreen(exchange):
 		print("{} -- {}%".format(ticker, count/length*100))
 		scraper = YahooFinanceScraper(ticker)
 		scraper.storeAllPrices()
+		scraper.storeGeneral()
 		snapshot = scraper.getSnapshot()
 
 		if snapshot is not None:

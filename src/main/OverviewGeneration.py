@@ -29,7 +29,7 @@ def generate_overviews(exchange):
 		ticker = tickers[i]
 		print("{}: {} - {}%".format(exchange,ticker,round(i/len(tickers)*100,2)),end=" ")
 		try:
-			if not generator.generateOverview(ticker,update=[]):
+			if not generator.generateOverview(ticker,update=['general',]):
 				generator.save("{}_{}-{}".format(exchange,strip_exchange_code(start),strip_exchange_code(ticker)))
 				generator = OverviewGenerator()
 				if i < len(tickers) - 1:
