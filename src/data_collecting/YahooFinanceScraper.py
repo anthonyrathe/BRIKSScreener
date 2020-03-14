@@ -343,11 +343,14 @@ class YahooFinanceScraper:
 
 			result['price'] = self.general['quoteSummary']['result'][0]['financialData']['currentPrice']['raw']
 
+			if result['currencycode_exchange'] == 'GBP':
+				# This is actually GBp
+				result['market_cap'] /= 100
+				result['price'] /= 100
+
 
 			return result
 		except Exception:
 			return None
 
-#scraper = YahooFinanceScraper('AC')
-#print(scraper.getSnapshot())
 

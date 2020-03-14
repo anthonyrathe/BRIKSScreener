@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5cbc792d-b3e0-4cf0-b8ba-501a679326ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_collecting/YahooFinanceScraper.py" afterPath="$PROJECT_DIR$/src/data_collecting/YahooFinanceScraper.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_processing/DataReader.py" afterPath="$PROJECT_DIR$/src/data_processing/DataReader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_processing/RawDataProcessor.py" afterPath="$PROJECT_DIR$/src/data_processing/RawDataProcessor.py" />
     </list>
     <ignored path="palantirscreener.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +26,7 @@
       <file leaf-file-name="RawDataProcessor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data_processing/RawDataProcessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.4444447">
+            <state vertical-scroll-proportion="3.1111112">
               <caret line="441" column="8" selection-start-line="441" selection-start-column="8" selection-end-line="441" selection-end-column="8" />
               <folding />
             </state>
@@ -45,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YahooFinanceScraper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="YahooFinanceScraper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/data_collecting/YahooFinanceScraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="351" column="1" selection-start-line="351" selection-start-column="1" selection-end-line="351" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.76608187">
+              <caret line="354" column="0" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SECScraper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SECScraper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29239765">
+            <state vertical-scroll-proportion="0.0">
               <caret line="128" column="58" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="58" />
               <folding />
             </state>
@@ -1060,20 +1058,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ExportToDrive.py">
+    <entry file="file://$PROJECT_DIR$/src/main/OverviewGeneration.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#83#0" expanded="true" />
-          </folding>
+          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_processing/TickerLoader.py">
+    <entry file="file://$PROJECT_DIR$/src/data_processing/RawDataProcessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="137" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="137" />
+        <state vertical-scroll-proportion="3.1111112">
+          <caret line="441" column="8" selection-start-line="441" selection-start-column="8" selection-end-line="441" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1082,6 +1078,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_processing/TickerLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="137" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="137" />
           <folding />
         </state>
       </provider>
@@ -1104,6 +1108,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ExportToDrive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="58" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/overview_generation/OverviewGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1114,34 +1136,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/OverviewGeneration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_processing/RawDataProcessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4444447">
-          <caret line="441" column="8" selection-start-line="441" selection-start-column="8" selection-end-line="441" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data_collecting/YahooFinanceScraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="351" column="1" selection-start-line="351" selection-start-column="1" selection-end-line="351" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29239765">
-          <caret line="128" column="58" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.76608187">
+          <caret line="354" column="0" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="0" />
           <folding />
         </state>
       </provider>
