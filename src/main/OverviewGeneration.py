@@ -27,9 +27,9 @@ def generate_overviews(exchange):
 	start = tickers[0]
 	for i in range(len(tickers)):
 		ticker = tickers[i]
-		print("{}: {} - {}%".format(exchange,ticker,round(i/len(tickers)*100,2)),end=" ")
+		print("{}: {} - {}% ".format(exchange,ticker,round(i/len(tickers)*100,2)),end=" ")
 		try:
-			if not generator.generateOverview(ticker,update=['general',]):
+			if not generator.generateOverview(ticker,update=[]):
 				generator.save("{}_{}-{}".format(exchange,strip_exchange_code(start),strip_exchange_code(ticker)))
 				generator = OverviewGenerator()
 				if i < len(tickers) - 1:
@@ -38,7 +38,7 @@ def generate_overviews(exchange):
 					break
 			print("ok")
 		except NoDataFoundException as e:
-			print(e.message)
+			print("[{}]".format(e.message))
 			continue
 		except KeyError:
 			print("")
@@ -51,7 +51,7 @@ files = os.listdir(os.path.relpath(base_path))
 for file in files:
 	os.remove("{}/{}".format(base_path,file))
 
-for exchange in exchanges[1:]:
+for exchange in exchanges:
 	generate_overviews(exchange)
 
 
