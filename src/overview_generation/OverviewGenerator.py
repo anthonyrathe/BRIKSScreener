@@ -136,7 +136,10 @@ class OverviewGenerator:
 
 		# Add prices chart
 		shape_num = 12
-		slide.shapes[shape_num].chart.chart_title.text_frame.text = "Price ({})".format(data['currencies']['exchange'])
+		currency = data['currencies']['exchange']
+		if currency == 'GBP':
+			currency = 'GBp'
+		slide.shapes[shape_num].chart.chart_title.text_frame.text = "Price ({})".format(currency)
 
 		prices = data['prices']
 		chart_data = ChartData()
