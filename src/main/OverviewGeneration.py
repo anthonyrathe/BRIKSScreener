@@ -37,8 +37,8 @@ def generate_overviews(exchange):
 				else:
 					break
 			print("ok")
-		except NoDataFoundException:
-			print("")
+		except NoDataFoundException as e:
+			print(e.message)
 			continue
 		except KeyError:
 			print("")
@@ -51,7 +51,7 @@ files = os.listdir(os.path.relpath(base_path))
 for file in files:
 	os.remove("{}/{}".format(base_path,file))
 
-for exchange in exchanges:
+for exchange in exchanges[1:]:
 	generate_overviews(exchange)
 
 
