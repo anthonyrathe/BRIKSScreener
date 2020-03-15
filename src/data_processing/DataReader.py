@@ -69,8 +69,9 @@ class DataReader:
 			with open(generalPath, 'r') as file:
 				self.general = ast.literal_eval(file.readline())
 				try:
-					self.sharesOutstanding = self.general['quoteSummary']['result'][0]['defaultKeyStatistics']['sharesOutstanding']['raw']
 					self.marketCap = self.general['quoteSummary']['result'][0]['summaryDetail']['marketCap']['raw']
+					#self.sharesOutstanding = self.general['quoteSummary']['result'][0]['defaultKeyStatistics']['sharesOutstanding']['raw']
+					self.sharesOutstanding = self.marketCap/self.general['quoteSummary']['result'][0]['financialData']['currentPrice']['raw']
 				except KeyError:
 					raise NoDataFoundException("No shares outstanding data found on Yahoo Finance...")
 				except TypeError:
@@ -353,7 +354,9 @@ class DataReader:
 		return result
 
 
-
+#reader = DataReader('AFX.L')
+#reader.loadRaw(update=['general',],ignore=['fundamentals',])
+#print(reader.getMarketCap())
 
 # Trigger data updates with the words:
 #	- fundamentals

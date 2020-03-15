@@ -313,8 +313,8 @@ class YahooFinanceScraper:
 				new = new.set_index(new.endDate)
 				shares_outstanding = self.general['quoteSummary']['result'][0]['defaultKeyStatistics']['sharesOutstanding']['raw']
 				current_price = self.general['quoteSummary']['result'][0]['financialData']['currentPrice']['raw']
-				new['market_cap'] = shares_outstanding*current_price
-				#new['market_cap'] = self.general['quoteSummary']['result'][0]['summaryDetail']['marketCap']['raw']
+				#new['market_cap'] = shares_outstanding*current_price
+				new['market_cap'] = self.general['quoteSummary']['result'][0]['summaryDetail']['marketCap']['raw']
 				result = pd.concat((result,new),axis=1)
 
 			result = result.loc[:, ~result.columns.duplicated()]
@@ -345,7 +345,7 @@ class YahooFinanceScraper:
 
 			if result['currencycode_exchange'] == 'GBP':
 				# This is actually GBp
-				result['market_cap'] /= 100
+				#result['market_cap'] /= 100
 				result['price'] /= 100
 
 
@@ -353,4 +353,5 @@ class YahooFinanceScraper:
 		except Exception:
 			return None
 
-
+#scraper = YahooFinanceScraper('AFX.L')
+#print(scraper.getSnapshot())
