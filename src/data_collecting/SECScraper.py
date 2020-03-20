@@ -133,8 +133,18 @@ class SECScraper:
 			parameters = {"primarysymbols": str(symbol), "fiscalperiod": "1980q1~"+str(end_year)+"q"+str(end_quarter), "appkey": str(appkey)}
 
 			# Make a get request with the parameters.
-			response = requests.get("http://datafied.api.edgar-online.com/v2/corefinancials/qtrJSON?primarysymbols="+parameters['primarysymbols']
-									+ "&fiscalperiod=" + str(parameters['fiscalperiod']) + "&appkey=" + str(parameters['appkey']))
+			tries = 1
+			while True:
+				try:
+					response = requests.get("http://datafied.api.edgar-online.com/v2/corefinancials/qtrJSON?primarysymbols="+parameters['primarysymbols']
+											+ "&fiscalperiod=" + str(parameters['fiscalperiod']) + "&appkey=" + str(parameters['appkey']))
+					break
+				except Exception as e:
+					if tries >= 5:
+						raise NoDataFoundException("Couldn't fulfill request to SEC...: {}".format(e.with_traceback()))
+					else:
+						tries += 1
+
 
 			tries = 1
 			while True:

@@ -11,8 +11,8 @@ europe_file = sorted([file for file in files if "europe" in file])[-1]
 sec_file = sorted([file for file in files if "sec" in file])[-1]
 
 # Load most recent EUROPE & SEC data
-europe_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),europe_file),index_col=0)
-sec_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),sec_file),index_col=0)
+europe_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),europe_file),index_col=0).iloc[:3]
+sec_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),sec_file),index_col=0).iloc[:3]
 
 # Connect to Google Sheets
 scope = ['https://spreadsheets.google.com/feeds',
@@ -23,7 +23,10 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name(
 gc = gspread.authorize(credentials)
 
 # Upload raw dataframes to spreadsheet
+#v1.0
 spreadsheet_key = '138rcq32-IuGKptSmijwFMmIMYcB3qDu18Ld9wyP2Ttk'
+#v1.1
+#spreadsheet_key = '19DLEbvfUYM6XS5zzOGIoE4nHYuQb7aF-ERORHgPeUec'
 spreadsheet = gc.open_by_key(spreadsheet_key)
 
 sec_worksheet = spreadsheet.worksheet('raw_SEC')

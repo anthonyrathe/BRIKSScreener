@@ -354,7 +354,8 @@ class DataReader:
 		return result
 
 
-#reader = DataReader('AFX.L')
+reader = DataReader('AED.BR')
+print(reader.getOverview(update=['general','prices']))
 #reader.loadRaw(update=['general',],ignore=['fundamentals',])
 #print(reader.getMarketCap())
 
