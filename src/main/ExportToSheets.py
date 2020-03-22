@@ -1,3 +1,5 @@
+import sys
+sys.path.append("/home/anthonyrathe/repos/BRIKSScreener")
 import pandas as pd
 import os
 import gspread
@@ -11,8 +13,8 @@ europe_file = sorted([file for file in files if "europe" in file])[-1]
 sec_file = sorted([file for file in files if "sec" in file])[-1]
 
 # Load most recent EUROPE & SEC data
-europe_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),europe_file),index_col=0).iloc[:3]
-sec_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),sec_file),index_col=0).iloc[:3]
+europe_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),europe_file),index_col=0)
+sec_data = pd.read_csv("{}/data/cleaned/snapshot/{}".format(dirname(dirname(dirname(__file__))),sec_file),index_col=0)
 
 # Connect to Google Sheets
 scope = ['https://spreadsheets.google.com/feeds',
