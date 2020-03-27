@@ -267,8 +267,8 @@ class SECScraper:
 #		UPDATE: when using the latest year data as test set (this is probably the best appx. of reality), we obtained
 #			even better results
 
-sc#raper = SECScraper('AAPL')
-sc#raper.storeAllQuarterFilings()
+#scraper = SECScraper('AAPL')
+#scraper.storeAllQuarterFilings()
 
 
 
