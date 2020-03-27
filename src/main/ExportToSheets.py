@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/home/anthonyrathe/repos/BRIKSScreener")
+sys.path.append("/home/anthonyrathe/repos/BRIKSScreener
 import pandas as pd
 import os
 import gspread

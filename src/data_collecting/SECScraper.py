@@ -137,7 +137,7 @@ class SECScraper:
 			while True:
 				try:
 					response = requests.get("http://datafied.api.edgar-online.com/v2/corefinancials/qtrJSON?primarysymbols="+parameters['primarysymbols']
-											+ "&fiscalperiod=" + str(parameters['fiscalperiod']) + "&appkey=" + str(parameters['appkey']))
+											+ "&fiscalperiod=" + str(parameters['fiscalperiod']) + "&limit=1000&appkey=" + str(parameters['appkey']))
 					break
 				except Exception as e:
 					if tries >= 5:
@@ -224,7 +224,7 @@ class SECScraper:
 					for i in range(len(new_data['result']['rows'])):
 						data.append(new_data['result']['rows'][i]['values'])
 				except Exception as e:
-					print("Special exception {}".format(e.with_traceback()))
+					print("Special exception {}".format(e))
 					raise NoDataFoundException(e)
 			return data
 
@@ -267,8 +267,8 @@ class SECScraper:
 #		UPDATE: when using the latest year data as test set (this is probably the best appx. of reality), we obtained
 #			even better results
 
-#scraper = SECScraper('BIOL')
-#scraper.storeAllQuarterFilings()
+sc#raper = SECScraper('AAPL')
+sc#raper.storeAllQuarterFilings()
 
 
 
