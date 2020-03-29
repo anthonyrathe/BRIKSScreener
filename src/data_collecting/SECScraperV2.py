@@ -10,6 +10,9 @@ from json.decoder import JSONDecodeError
 from src.helper.xml_to_dict import XmlDictConfig
 from xml.etree import cElementTree as ElementTree
 
+with open("{}/credentials/edgar_api.txt".format(dirname(dirname(dirname(__file__))))) as f:
+	EDGARCoreFinancialappkey=f.readline()
+
 class SECScraperV2:
 	"""
 	This scraper fetches all fundamental data for a given company.
@@ -22,8 +25,6 @@ class SECScraperV2:
 		self.result = None
 
 	def scrapeAllQuarterFilings(self):
-		# Global variables
-		EDGARCoreFinancialappkey="usjam7jt5zcvmq8s3s22sadq"
 
 		# Fetches the core financial data of a company during four quarters in JSON format.
 		def get_core_financials_8qtrs(symbol, end_year, end_quarter, appkey=EDGARCoreFinancialappkey):
