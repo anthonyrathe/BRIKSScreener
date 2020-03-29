@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cbc792d-b3e0-4cf0-b8ba-501a679326ac" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ExportToSheets.py" afterPath="$PROJECT_DIR$/src/main/ExportToSheets.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data_collecting/SECScraper.py" afterPath="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/progress" afterPath="$PROJECT_DIR$/src/main/progress" />
     </list>
     <ignored path="palantirscreener.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +39,40 @@
       <file leaf-file-name="SECScraper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.759259">
-              <caret line="270" column="1" selection-start-line="270" selection-start-column="1" selection-end-line="270" selection-end-column="1" />
+            <state vertical-scroll-proportion="-11.111111">
+              <caret line="129" column="38" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fetch_EDGAR.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/fetch_EDGAR.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="139" column="6" selection-start-line="139" selection-start-column="6" selection-end-line="139" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edgar_api.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/credentials/edgar_api.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -66,10 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExportToSheets.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExportToSheets.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ExportToSheets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.029239766">
+            <state vertical-scroll-proportion="0.0">
               <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
               <folding />
             </state>
@@ -92,30 +126,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataFetch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/DataFetch.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OverviewGenerator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/overview_generation/OverviewGenerator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -155,7 +165,6 @@
         <option value="$PROJECT_DIR$/justine_programma" />
         <option value="$PROJECT_DIR$/src/overview_generation/test.py" />
         <option value="$PROJECT_DIR$/src/main/test.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/progress" />
         <option value="$PROJECT_DIR$/src/data_processing/TickerLoader.py" />
         <option value="$PROJECT_DIR$/src/main/main_weekly.py" />
@@ -168,8 +177,10 @@
         <option value="$PROJECT_DIR$/src/overview_generation/OverviewGenerator.py" />
         <option value="$PROJECT_DIR$/src/data_collecting/YahooFinanceScraper.py" />
         <option value="$PROJECT_DIR$/src/data_processing/DataReader.py" />
-        <option value="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
         <option value="$PROJECT_DIR$/src/main/ExportToSheets.py" />
+        <option value="$PROJECT_DIR$/credentials/edgar_api.txt" />
+        <option value="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -453,7 +464,7 @@
       <recent name="$PROJECT_DIR$/src/data_processing" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.SECScraper">
+  <component name="RunManager" selected="Python.fetch_EDGAR">
     <configuration default="false" name="SECScraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -467,23 +478,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="palantirscreener" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/data_collecting/SECScraper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="OverviewGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/overview_generation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="palantirscreener" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/overview_generation/OverviewGenerator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -535,6 +529,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="palantirscreener" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/ExportToSheets.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="fetch_EDGAR" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="palantirscreener" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/fetch_EDGAR.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -663,18 +674,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.SECScraper" />
-      <item index="1" class="java.lang.String" itemvalue="Python.OverviewGenerator" />
-      <item index="2" class="java.lang.String" itemvalue="Python.YahooFinanceScraper" />
-      <item index="3" class="java.lang.String" itemvalue="Python.DataReader" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ExportToSheets" />
+      <item index="1" class="java.lang.String" itemvalue="Python.YahooFinanceScraper" />
+      <item index="2" class="java.lang.String" itemvalue="Python.DataReader" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ExportToSheets" />
+      <item index="4" class="java.lang.String" itemvalue="Python.fetch_EDGAR" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.SECScraper" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ExportToSheets" />
-        <item index="2" class="java.lang.String" itemvalue="Python.DataReader" />
-        <item index="3" class="java.lang.String" itemvalue="Python.YahooFinanceScraper" />
-        <item index="4" class="java.lang.String" itemvalue="Python.OverviewGenerator" />
+        <item index="0" class="java.lang.String" itemvalue="Python.fetch_EDGAR" />
+        <item index="1" class="java.lang.String" itemvalue="Python.SECScraper" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ExportToSheets" />
+        <item index="3" class="java.lang.String" itemvalue="Python.DataReader" />
+        <item index="4" class="java.lang.String" itemvalue="Python.YahooFinanceScraper" />
       </list>
     </recent_temporary>
   </component>
@@ -757,13 +768,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/cleaned/v2/AAPL_1_1.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17307693">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/cleaned/v2/GOOGL_1_1.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-122.04388">
@@ -925,13 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="6" selection-start-line="133" selection-start-column="6" selection-end-line="133" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/progress">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -985,13 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/fetch_EDGAR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1058,16 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_processing/DataReader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="357" column="1" selection-start-line="357" selection-start-column="1" selection-end-line="357" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data_processing/RawDataProcessor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1091,14 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/DataProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/raw/fundamentals/AAPL.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.5048544">
@@ -1115,18 +1087,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
+    <entry file="file://$PROJECT_DIR$/src/main/ExportToSheets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.759259">
-          <caret line="270" column="1" selection-start-line="270" selection-start-column="1" selection-end-line="270" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ExportToSheets.py">
+    <entry file="file://$PROJECT_DIR$/src/data_processing/DataReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.029239766">
-          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="357" column="1" selection-start-line="357" selection-start-column="1" selection-end-line="357" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/fetch_EDGAR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_collecting/SECScraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.111111">
+          <caret line="129" column="38" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="6" selection-start-line="139" selection-start-column="6" selection-end-line="139" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/DataProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credentials/edgar_api.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
           <folding />
         </state>
       </provider>

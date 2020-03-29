@@ -7,6 +7,9 @@ from src.exceptions.APILimitExceededException import APILimitExceededException
 from json.decoder import JSONDecodeError
 import xml.etree.ElementTree as ET
 
+with open("{}/credentials/edgar_api.txt".format(dirname(dirname(dirname(__file__))))) as f:
+	EDGARCoreFinancialappkey=f.readline()
+
 def etree_to_dict(t):
 	if t.tag in ['rows','values']:
 		result = []
@@ -125,8 +128,6 @@ class SECScraper:
 		self.result = None
 
 	def scrapeAllQuarterFilings(self):
-		# Global variables
-		EDGARCoreFinancialappkey="usjam7jt5zcvmq8s3s22sadq"
 
 		# Fetches the core financial data of a company during four quarters in JSON format.
 		def get_core_financials_8qtrs(symbol, end_year, end_quarter, appkey=EDGARCoreFinancialappkey):
