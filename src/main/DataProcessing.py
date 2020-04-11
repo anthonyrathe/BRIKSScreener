@@ -23,7 +23,7 @@ for ticker in tickers:
 		print("{}: {}%".format(ticker,count/amount*100))
 
 		reader = DataReader(ticker)
-		processor = RawDataProcessor(reader,update=['prices'])
+		processor = RawDataProcessor(reader,update=['prices',])
 
 		result = processor.process(version='overview',SECDelay=SECDelay, ticker=ticker).iloc[-1,:]
 		result.name = ticker

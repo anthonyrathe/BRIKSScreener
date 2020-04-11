@@ -72,6 +72,8 @@ class DataReader:
 					self.marketCap = self.general['quoteSummary']['result'][0]['summaryDetail']['marketCap']['raw']
 					#self.sharesOutstanding = self.general['quoteSummary']['result'][0]['defaultKeyStatistics']['sharesOutstanding']['raw']
 					self.sharesOutstanding = self.marketCap/self.general['quoteSummary']['result'][0]['financialData']['currentPrice']['raw']
+					#self.sharesOutstanding = int(self.general['quoteSummary']['result'][0]['summaryDetail']['marketCap']['raw']/self.general['quoteSummary']['result'][0]['summaryDetail']['previousClose']['raw'])
+					#self.marketCap = self.sharesOutstanding*self.general['quoteSummary']['result'][0]['financialData']['currentPrice']['raw']
 				except KeyError:
 					raise NoDataFoundException("No shares outstanding data found on Yahoo Finance...")
 				except TypeError:
@@ -108,6 +110,19 @@ class DataReader:
 		if self.cleaned is None:
 			raise Exception("Cleaned data wasn't loaded...")
 		return self.cleaned
+
+	def fixFundamentalsReceivedDate(self):
+		fundamentals = self.getFundamentals()
+		# SEC quarter releases should be filed the latest 45 days after period end
+		# (https://www.gibsondunn.com/wp-content/uploads/2019/08/SEC-Filing-Deadline-Calendar-2020.pdf
+		fundamentals['receiveddate'] = pd.to_datetime(fundamentals['periodenddate'],format="%m/%d/%Y") + datetime.timedelta(days=45)
+		fundamentals = fundamentals.set_index('receiveddate',drop=False)
+		self.fundamentals = fundamentals
+
+	def fixFundamentalsMissingData(self):
+		fundamentals = self.getFundamentals()
+		# Assume that missing data equals zero values!
+		self.fundamentals = fundamentals.fillna(0.0)
 
 	def getLatestFundamentals(self, date, SECDelay, numberOfQuarters=4, gapFilling='fillout'):
 		"""
@@ -354,7 +369,7 @@ class DataReader:
 		return result
 
 
-#reader = DataReader('AED.BR')
+#reader = DataReader('CPRI')
 #print(reader.getOverview(update=['general','prices']))
 #reader.loadRaw(update=['general',],ignore=['fundamentals',])
 #print(reader.getMarketCap())

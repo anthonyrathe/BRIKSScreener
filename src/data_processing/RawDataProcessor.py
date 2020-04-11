@@ -257,13 +257,16 @@ class RawDataProcessor:
 		self.result = processedData
 		return self.result
 
-	def processV2(self, SECDelay, price_delay):
+	def processV2(self, SECDelay, price_delay, fix_received_dates, fix_missing_data):
 		# SEC Delay: if SEC Delay == 1, this means that we can ACT on SEC data only the day AFTER filing
 		# price delay: if price delay == 1, this means that we can ACT on price data only the day after the price data was given
 		# The index corresponds to the date at which we ACT (i.e. buy or sell)
 		self.version = 'v2'
 		self.SECDelay = SECDelay
 		self.fileName = "{}_{}_{}".format(self.reader.ticker,SECDelay,price_delay)
+
+		if fix_received_dates: self.reader.fixFundamentalsReceivedDate()
+		if fix_missing_data: self.reader.fixFundamentalsMissingData()
 
 		priceData = self.reader.getPrices()
 
