@@ -258,6 +258,7 @@ class RawDataProcessor:
 		return self.result
 
 	def processV2(self, SECDelay, price_delay, fix_received_dates, fix_missing_data):
+		# TODO: note that we assume that all fundamental data is in USD!!!!! -> should add conversion to USD
 		# SEC Delay: if SEC Delay == 1, this means that we can ACT on SEC data only the day AFTER filing
 		# price delay: if price delay == 1, this means that we can ACT on price data only the day after the price data was given
 		# The index corresponds to the date at which we ACT (i.e. buy or sell)

@@ -29,13 +29,13 @@ for ticker in tickers:
 
 	fundamentals = reader.getFundamentals()
 	fundamentals['periodenddate'] = pd.to_datetime(fundamentals['periodenddate'],format="%m/%d/%Y")
-	first_filing_date = fundamentals['periodenddate'].min()
-	first_filing = fundamentals.loc[fundamentals.periodenddate==first_filing_date]
-	peer_group = first_filing['sicdescription'].values[0]
-	conversion_rate = first_filing['usdconversionrate'].values[0]
+	first_date = max(fundamentals['periodenddate'].min(),reader.getPrices().index.min())
+	a_filing = fundamentals.iloc[0]
+	peer_group = a_filing['sicdescription']
+	conversion_rate = a_filing['usdconversionrate']
 
 	if (conversion_rate == 1.0):
-		ticker_data.append((first_filing_date,peer_group,ticker))
+		ticker_data.append((first_date,peer_group,ticker))
 
 ticker_data = sorted(ticker_data,key=lambda x: x[0])
 
