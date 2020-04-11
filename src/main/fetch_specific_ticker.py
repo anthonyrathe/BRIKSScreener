@@ -13,6 +13,7 @@ tickers = list(np.array(groups).flatten())
 # - SAN (revenueGrowth1y)
 # - ING (revenueGrowth1y)
 # - BBAR (revenueGrowth1y)
+problematic = ['MTSL','PUK','LFC','SAN','ING','BBAR']
 
 
 for ticker in tickers[tickers.index('ING')+1:]:

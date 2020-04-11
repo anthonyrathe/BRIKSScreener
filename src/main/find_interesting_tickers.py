@@ -15,9 +15,12 @@ fundamentals_tickers = [s[:-4] for s in os.listdir(fundamentals_path)]
 prices_tickers = [s[:-4] for s in os.listdir(prices_path)]
 general_tickers = [s[:-4] for s in os.listdir(general_path)]
 tickers = [t for t in fundamentals_tickers if (t in prices_tickers) and (t in general_tickers)]
+problematic = ['MTSL','PUK','LFC','SAN','ING','BBAR']
 
 ticker_data = []
 for ticker in tickers:
+	if ticker in problematic:
+		continue
 	try:
 		reader = DataReader(ticker)
 		reader.loadRaw()
