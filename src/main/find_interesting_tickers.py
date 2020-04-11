@@ -35,8 +35,8 @@ for ticker in tickers[:1000]:
 ticker_data = sorted(ticker_data,key=lambda x: x[0])
 print(ticker_data)
 
-peer_group_count = 2
-peer_group_size = 2
+peer_group_count = 25
+peer_group_size = 4
 def finished(groups):
 	group_sizes = [int(len(v)>=peer_group_size) for _,v in groups.items()]
 	return sum(group_sizes) >= peer_group_count
