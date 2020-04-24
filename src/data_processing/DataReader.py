@@ -113,10 +113,19 @@ class DataReader:
 
 	def fixFundamentalsReceivedDate(self):
 		fundamentals = self.getFundamentals()
-		# SEC quarter releases should be filed the latest 45 days after period end
+		# SEC 10-Q's should be filed the latest 45 days after period end
+		# SEC 10-K's should be filed the latest 90 days after period end
+		# We assume all filings were submitted before before or at the deadline
 		# (https://www.gibsondunn.com/wp-content/uploads/2019/08/SEC-Filing-Deadline-Calendar-2020.pdf
-		fundamentals['receiveddate'] = pd.to_datetime(fundamentals['periodenddate'],format="%m/%d/%Y") + datetime.timedelta(days=45)
+		fundamentals['receiveddate'] = fundamentals.index
+		fundamentals.loc[fundamentals.formtype.str.contains('10-Q'),'receiveddate'] = pd.concat([pd.to_datetime(fundamentals.loc[fundamentals.formtype.str.contains('10-Q'),'periodenddate'],format="%m/%d/%Y") + datetime.timedelta(days=45),
+																					pd.to_datetime(fundamentals.loc[fundamentals.formtype.str.contains('10-Q'),'receiveddate'],format="%m/%d/%Y")],axis=1).min(axis=1)
+		fundamentals.loc[fundamentals.formtype.str.contains('10-K'),'receiveddate'] = pd.concat([pd.to_datetime(fundamentals.loc[fundamentals.formtype.str.contains('10-K'),'periodenddate'],format="%m/%d/%Y") + datetime.timedelta(days=90),
+																					pd.to_datetime(fundamentals.loc[fundamentals.formtype.str.contains('10-K'),'receiveddate'],format="%m/%d/%Y")],axis=1).min(axis=1)
+
 		fundamentals = fundamentals.set_index('receiveddate',drop=False)
+		fundamentals = fundamentals.sort_index()
+
 		self.fundamentals = fundamentals
 
 	def fixFundamentalsMissingData(self):

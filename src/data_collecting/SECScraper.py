@@ -257,7 +257,7 @@ class SECScraper:
 			new_data = self.result
 			pd.concat((old_data,new_data),ignore_index=True,sort=True).sort_values(by='receiveddate').drop_duplicates(keep='last')
 
-		self.result.to_csv(path,index=False)
+		self.result.sort_values(by='receiveddate').to_csv(path,index=False)
 
 # NOTES
 # - The SEC will override changed reports, which leads to reports being submitted much too late. This does not impair the

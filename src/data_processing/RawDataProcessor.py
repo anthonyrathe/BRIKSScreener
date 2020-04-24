@@ -264,7 +264,10 @@ class RawDataProcessor:
 		# The index corresponds to the date at which we ACT (i.e. buy or sell)
 		self.version = 'v2'
 		self.SECDelay = SECDelay
-		self.fileName = "{}_{}_{}".format(self.reader.ticker,SECDelay,price_delay)
+		if not fix_received_dates:
+			self.fileName = "{}_{}_{}_not_fixed".format(self.reader.ticker,SECDelay,price_delay)
+		else:
+			self.fileName = "{}_{}_{}".format(self.reader.ticker,SECDelay,price_delay)
 
 		if fix_received_dates: self.reader.fixFundamentalsReceivedDate()
 		if fix_missing_data: self.reader.fixFundamentalsMissingData()
