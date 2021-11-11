@@ -1,4 +1,4 @@
-# BRIKSScreener
+# BRIKS Screener
 Stock screener created by Anthony Rathé for BRIKS
 
 ## About
